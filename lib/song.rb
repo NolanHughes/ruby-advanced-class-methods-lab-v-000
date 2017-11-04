@@ -69,8 +69,8 @@ class Song
     parsed_artistname = parse(filename)[0]
     parsed_name = parse(filename)[1]
 
-    @artist_name = parsed_artistname
-    @name = parsed_name
+    # @artist_name = parsed_artistname
+    # @name = parsed_name
 
     @s.artist_name = parsed_artistname
     @s.name = parsed_name
