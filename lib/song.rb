@@ -27,10 +27,11 @@ class Song
   end
 
   def self.create_by_name(name)
-    s = self.new
-    @name = name
+    # s = self.new
+    s = self.create
+    # @name = name
     s.name = name
-    s.save
+    # s.save
     s
   end
 
@@ -61,12 +62,14 @@ class Song
   def self.new_from_filename(filename)
     @s = self.new
 
-    def self.parse(full_filename)
-      full_filename.split(/[-.]/).collect {|word| word.strip}
-    end
+    # def self.parse(full_filename)
+    #   full_filename.split(/[-.]/).collect {|word| word.strip}
+    # end
 
-    parsed_artistname = parse(filename)[0]
-    parsed_name = parse(filename)[1]
+    parse = filename.split(/[-.]/).collect {|word| word.strip}
+
+    parsed_artistname = parse[0]
+    parsed_name = parse[1]
 
     @artist_name = parsed_artistname
     @name = parsed_name
