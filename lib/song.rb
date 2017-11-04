@@ -62,14 +62,12 @@ class Song
   def self.new_from_filename(filename)
     @s = self.new
 
-    # def self.parse(full_filename)
-    #   full_filename.split(/[-.]/).collect {|word| word.strip}
-    # end
+    def self.parse(full_filename)
+      full_filename.split(/[-.]/).collect {|word| word.strip}
+    end
 
-    parse = filename.split(/[-.]/).collect {|word| word.strip}
-
-    parsed_artistname = parse[0]
-    parsed_name = parse[1]
+    parsed_artistname = parse(filename)[0]
+    parsed_name = parse(filename)[1]
 
     @artist_name = parsed_artistname
     @name = parsed_name
